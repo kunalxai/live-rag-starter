@@ -2,7 +2,7 @@ version: '3.8'
 services:
 
   faiss:
-    image: ghcr.io/dhamm-ai/faiss-starter:latest
+    image: ghcr.io/kunalxai/faiss-starter:latest
     volumes:
       - ./sample_docs:/data/sample_docs
     ports:
