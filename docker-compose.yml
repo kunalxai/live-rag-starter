@@ -1,0 +1,18 @@
+version: '3.8'
+services:
+
+  faiss:
+    image: ghcr.io/dhamm-ai/faiss-starter:latest
+    volumes:
+      - ./sample_docs:/data/sample_docs
+    ports:
+      - "19530:19530"   # if using a FAISS gRPC service; adjust as needed
+
+  api:
+    build: ./api
+    volumes:
+      - ./api:/app
+    ports:
+      - "8000:8000"
+    depends_on:
+      - faiss
