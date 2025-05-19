@@ -2,11 +2,11 @@ version: '3.8'
 services:
 
   faiss:
-    image: ghcr.io/kunalxai/faiss-starter:latest
+    build: ./faiss
     volumes:
       - ./sample_docs:/data/sample_docs
     ports:
-      - "19530:19530"   # if using a FAISS gRPC service; adjust as needed
+      - "19530:19530"
 
   api:
     build: ./api
